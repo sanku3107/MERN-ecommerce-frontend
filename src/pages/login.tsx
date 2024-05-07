@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase";
 import { useLoginMutation } from "../redux/api/userAPI";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
-import { messageResponse } from "../types/api-types";
+import { MessageResponse } from "../types/api-types";
 const Login = () => {
   const [gender, setGender] = useState("");
   const [date, setDate] = useState("");
@@ -29,7 +29,7 @@ const Login = () => {
         toast.success(res.data.message);
       } else {
         const error = res.error as FetchBaseQueryError;
-        const message = (error.data as messageResponse).message;
+        const message = (error.data as MessageResponse).message;
         toast.error(message);
       }
       console.log(user);
