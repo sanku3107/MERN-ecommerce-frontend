@@ -10,7 +10,7 @@ import {
 } from "../../../redux/api/productAPI";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { server } from "../../../redux/store";
+// import { server } from "../../../redux/store";
 import { Skeleton } from "../../../components/loader";
 import { responseToast } from "../../../utils/features";
 
@@ -107,7 +107,7 @@ const Productmanagement = () => {
           <>
             <section>
               <strong>ID - {data?.product._id}</strong>
-              <img src={`${server}/${photo}`} alt="Product" />
+              <img src={`${photo}`} alt="Product" />
               <p>{name}</p>
               {stock > 0 ? (
                 <span className="green">{stock} Available</span>
